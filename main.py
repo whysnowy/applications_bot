@@ -146,7 +146,7 @@ async def apply(inter: disnake.CommandInteraction):
         color=disnake.Color.orange()
     )
 
-    await inter.response.send_message(embed=warning_embed, view=ApplyButton(), ephemeral=False)
+    await inter.response.send_message(embed=warning_embed, view=ApplyButton(), ephemeral=True)
 
 
 @bot.event
