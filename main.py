@@ -1,10 +1,13 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import disnake
 from disnake.ext import commands
 from disnake import TextInputStyle
 
-GUILD_ID = "YOUR_GIULD_ID"  # твой сервер
-ADMIN_CHANNEL_ID = "YOUR_ADMIN_CHANNEL_ID" # канал заявок для стаффа
-ROLE_ID = "YOUR_BLACKLIST_ROLE_ID" # роль, которой запрещено подавать заявку
+GUILD_ID = 1367886168544510013  # твой сервер
+ADMIN_CHANNEL_ID = 1373474691276079124  # канал заявок для стаффа
+ROLE_ID = 1368343018683502645  # роль, которая запрещает подавать заявку
 
 intents = disnake.Intents.default()
 intents.members = True  # чтобы выдавать роли
@@ -151,5 +154,5 @@ async def on_ready():
     await bot.change_presence(activity=disnake.Activity(type=disnake.ActivityType.watching, name="анкеты"))
     print(f"Бот запущен как {bot.user}")
 
-bot.run("BOT_TOKEN")
+bot.run(os.getenv("DISCORD_TOKEN"))
 
