@@ -154,5 +154,5 @@ async def on_ready():
     await bot.change_presence(activity=disnake.Activity(type=disnake.ActivityType.watching, name="анкеты"))
     print(f"Бот запущен как {bot.user}")
 
-bot.run(os.getenv(DISCORD_TOKEN))
+bot.run(os.getenv("DISCORD_TOKEN"))
 
